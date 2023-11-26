@@ -8,26 +8,43 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    
+      <div className="container">
+      <h1>Formulário</h1>
+      <form action="http://localhost:3000/enviar-email" method="POST" encType="multipart/form-data">
+        {/* Seus campos de formulário */}
+        <input type="text" name="Name" placeholder="Nome Completo" required />
+        <input type="email" name="Email" placeholder="Email" required />
+        <input type="file" name="Documento" id="file" accept="image/*" />
+        <p>Selecione seu documento de identificação CNH/RG</p>
+        <label htmlFor="file" id="label-file">
+          <p>Carregar Documento</p> <span className="material-icons"></span>
+        </label>
+        <label htmlFor="Adotar" id="label-porte">
+          <p>Pets para Adoção:</p>
+          <select name="Adotar">
+            <option>Selecione um Pet</option>
+            <option>Jhenny</option>
+            <option>Cigana</option>
+            <option>Kiara</option>
+            <option>Rubi</option>
+            <option>Esperança</option>
+            <option>Nega</option>
+            <option>Marry</option>
+            <option>Livia</option>
+            <option>Filhote</option>
+            <option>Shitaraa</option>
+            <option>Agina</option>
+            <option>Lili Caramelo</option>
+            <option>Baby</option>
+            <option>Florinda</option>
+            <option>Yana</option>
+            <option>Narcisa.</option>
+          </select>
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
     </>
   )
 }
